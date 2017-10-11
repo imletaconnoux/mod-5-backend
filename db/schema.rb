@@ -15,13 +15,6 @@ ActiveRecord::Schema.define(version: 20171010193156) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cards", force: :cascade do |t|
-    t.integer "collection_id"
-    t.integer "video_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "collections", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
@@ -40,6 +33,13 @@ ActiveRecord::Schema.define(version: 20171010193156) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "video_collections", force: :cascade do |t|
+    t.integer "collection_id"
+    t.integer "video_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
