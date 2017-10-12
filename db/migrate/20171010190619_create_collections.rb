@@ -3,7 +3,7 @@ class CreateCollections < ActiveRecord::Migration[5.1]
     create_table :collections do |t|
       t.string :name
       t.integer :user_id
-      t.string :image, default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3aJot2vpLana1rbggDx7-rLO4eeP_XMaJXLqZPkjeOt9WJs9Aog"
+      t.string :image, default: "https://i.vimeocdn.com/portrait/12751809_640x640"
 
       t.timestamps
     end
