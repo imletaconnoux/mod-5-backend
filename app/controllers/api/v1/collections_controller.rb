@@ -13,7 +13,7 @@ class Api::V1::CollectionsController < ApplicationController
   def show
     @collection = Collection.find(params.id)
     @videos = @collection.videos
-    render json: {collection: @collection, videos: @videos}, status: 201
+    render json: @collection, status: 201
   end
 
   private

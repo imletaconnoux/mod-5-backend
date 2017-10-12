@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20171010193156) do
   create_table "videos", force: :cascade do |t|
     t.string "comment", default: ""
     t.string "title"
-    t.text "description"
     t.string "youtube_id"
     t.string "thumbnail"
     t.datetime "created_at", null: false

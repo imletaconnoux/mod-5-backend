@@ -10,3 +10,7 @@ User.create(name: "Isabelle", email: "imletaconnoux@gmail.com", password: "passw
 
 Collection.create(name: "Dogs", user_id: 1)
 Collection.create(name: "React", user_id: 1)
+
+Video.create(title: "*Try Not To Laugh Challenge* Funny Dogs Compilation - Funniest Dog Videos 2017", youtube_id: "aEzZLXBH3rU", thumbnail: "https://i.ytimg.com/vi/aEzZLXBH3rU/hqdefault.jpg")
+
+VideoCollection.create(collection_id: 1, video_id: 1)
