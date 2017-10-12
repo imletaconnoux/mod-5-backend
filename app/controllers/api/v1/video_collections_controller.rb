@@ -2,11 +2,11 @@ class Api::V1::VideoCollectionsController < ApplicationController
 
   def index
     @video_collections = VideoCollection.all
-    render json: @ideo_collections, status: 200
+    render json: @video_collections, status: 200
   end
 
   def create
-    @video_collection = VideoCollection.create(video_collection_params)
+    @video_collection = VideoCollection.find_or_create_by(video_collection_params)
     render json: @video_collection, status: 201
   end
 
