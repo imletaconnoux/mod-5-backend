@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20171010193156) do
   create_table "collections", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
+    t.string "image", default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3aJot2vpLana1rbggDx7-rLO4eeP_XMaJXLqZPkjeOt9WJs9Aog"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
