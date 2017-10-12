@@ -6,7 +6,7 @@ class Api::V1::CollectionsController < ApplicationController
   end
 
   def create
-    @collection = collection.create(collection_params)
+    @collection = Collection.create(collection_params)
     render json: @collection, status: 201
   end
 
