@@ -11,6 +11,13 @@ class Api::V1::VideosController < ApplicationController
     render json: @video, status: 201
   end
 
+  def update
+    @video = Video.find_by(id: params[:id])
+    @video.comment = params[:comment]
+    @video.save
+    render json: @video
+  end
+
   private
   def video_params
     params.permit(:comment, :title, :youtube_id, :thumbnail)
