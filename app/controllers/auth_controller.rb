@@ -6,6 +6,8 @@ class AuthController < ApplicationController
     if user && user.authenticate(params[:password])
       token = JWT.encode({user_id: user.id}, "coding")
       render json: {user: user, jwt: token}
+    else
+      render json: {message: "Invalid login credentials"}
     end
   end
 end
