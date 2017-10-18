@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       delete '/video_collections', to: 'video_collections#destroy'
       resources :videos
       resources :searches
+      resources :follows
       get '/users', to: 'users#index'
       post '/users', to: 'users#create'
     end
