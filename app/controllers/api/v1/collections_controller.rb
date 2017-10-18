@@ -1,6 +1,6 @@
 class Api::V1::CollectionsController < ApplicationController
 
-      
+
 
   def index
 
@@ -9,6 +9,12 @@ class Api::V1::CollectionsController < ApplicationController
   end
 
 #just get user collections
+
+  def searchcollections
+    @collections = Collection.select{ |collection| collection.name.include?(params[:term]) }
+    render json: @collections, status: 200
+
+  end
   def usercollections
 
     @collections = current_user.collections

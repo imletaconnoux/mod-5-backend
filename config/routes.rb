@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       delete '/follows', to: 'follows#destroy'
       get '/usercollections', to: 'collections#usercollections'
       get '/userfollowings', to: 'collections#userfollowings'
+      get '/searchcollections', to: 'collections#searchcollections'
       get '/users', to: 'users#index'
       post '/users', to: 'users#create'
     end
