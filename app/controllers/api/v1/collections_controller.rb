@@ -8,13 +8,14 @@ class Api::V1::CollectionsController < ApplicationController
     render json: @collections, status: 200
   end
 
-#just get user collections
+#do we need following action??
 
   def searchcollections
     @collections = Collection.select{ |collection| collection.name.include?(params[:term]) }
     render json: @collections, status: 200
 
   end
+
   def usercollections
 
     @collections = current_user.collections
