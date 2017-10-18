@@ -1,9 +1,11 @@
 class Api::V1::CollectionsController < ApplicationController
 
+      skip_before_action :authorized, only: [:show]
+
   def index
-    #JWT token has encoded user_id
-    #frontend makes get request with JWT token
-    #decode token and find collections where user_id = decoded_token_id
+
+    @collections = Collection.all
+    render json: @collections, status: 200
 
     @collections = current_user.collections
     @collections.map do | collection |
@@ -14,6 +16,20 @@ class Api::V1::CollectionsController < ApplicationController
     end
 
     render json: @collections, status: 200
+  end
+
+  def usercollections
+
+    @collections = current_user.collections
+    @collections.map do | collection |
+      if collection.videos.length > 0
+        collection.image = collection.videos[0].thumbnail
+        collection.save
+      end
+    end
+
+    render json: @collections, status: 200
+
   end
 
   def create

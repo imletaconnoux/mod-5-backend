@@ -1,5 +1,7 @@
 class Api::V1::VideoCollectionsController < ApplicationController
 
+
+
   def index
     @video_collections = VideoCollection.all
     render json: @video_collections, status: 200
