@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       resources :videos
       resources :searches
       resources :follows
+      delete '/follows', to: 'follows#destroy'
       get '/usercollections', to: 'collections#usercollections'
+      get '/userfollowings', to: 'collections#userfollowings'
       get '/users', to: 'users#index'
       post '/users', to: 'users#create'
     end

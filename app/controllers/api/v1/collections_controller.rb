@@ -1,23 +1,14 @@
 class Api::V1::CollectionsController < ApplicationController
 
-      skip_before_action :authorized, only: [:show]
+      
 
   def index
 
     @collections = Collection.all
     render json: @collections, status: 200
-
-    @collections = current_user.collections
-    @collections.map do | collection |
-      if collection.videos.length > 0
-        collection.image = collection.videos[0].thumbnail
-        collection.save
-      end
-    end
-
-    render json: @collections, status: 200
   end
 
+#just get user collections
   def usercollections
 
     @collections = current_user.collections
@@ -32,6 +23,11 @@ class Api::V1::CollectionsController < ApplicationController
 
   end
 
+  def userfollowings
+    @collections = current_user.followings
+    render json: @collections, status: 200
+
+  end
   def create
     @collection = Collection.create(user_id: current_user.id, name: params[:name])
 
