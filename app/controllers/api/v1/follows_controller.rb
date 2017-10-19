@@ -8,8 +8,8 @@ class Api::V1::FollowsController < ApplicationController
   end
 
   def create
-    @follows = Follow.find_or_create_by(follow_params)
-    render json: @follows, status: 201
+    @follow = Follow.find_or_create_by(following_id: params[:following_id], follower_id: current_user.id)
+    render json: @follow, status: 201
   end
 
   def destroy

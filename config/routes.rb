@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :searches
       resources :follows
       delete '/follows', to: 'follows#destroy'
+      post '/follows', to: 'follows#create'
       get '/usercollections', to: 'collections#usercollections'
       get '/userfollowings', to: 'collections#userfollowings'
       get '/searchcollections', to: 'collections#searchcollections'
