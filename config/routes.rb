@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get '/userfollowings', to: 'collections#userfollowings'
       get '/searchcollections', to: 'collections#searchcollections'
       get '/users', to: 'users#index'
+      get '/users/me', to: 'users#me'
       post '/users', to: 'users#create'
     end
   end

@@ -7,6 +7,11 @@ class Api::V1::UsersController < ApplicationController
     render json: @users, status: 200
   end
 
+  def me
+    if @user
+      render json: @user, status: 200
+    end
+  end
 
 
   def create
