@@ -1,3 +1,4 @@
 class VideoSerializer < ActiveModel::Serializer
-  attributes :id, :comment, :title, :youtube_id, :thumbnail
+  attributes :id, :title, :youtube_id, :thumbnail
+  has_many :comments
 end

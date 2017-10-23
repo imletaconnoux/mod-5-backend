@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       resources :videos
       resources :searches
       resources :follows
+      resources :comments
+      post '/comments', to: 'comments#create'
+      get '/usercomments', to: 'comments#usercomments'
       delete '/follows', to: 'follows#destroy'
       post '/follows', to: 'follows#create'
       get '/usercollections', to: 'collections#usercollections'
