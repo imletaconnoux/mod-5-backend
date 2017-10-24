@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :sub_topics
-  resources :parent_topics
   namespace :api do
     namespace :v1 do
       resources :collections
@@ -10,6 +8,8 @@ Rails.application.routes.draw do
       resources :searches
       resources :follows
       resources :comments
+      resources :sub_topics
+      resources :parent_topics
       post '/comments', to: 'comments#create'
       get '/usercomments', to: 'comments#usercomments'
       delete '/follows', to: 'follows#destroy'

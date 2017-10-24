@@ -1,4 +1,4 @@
 class ParentTopicSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :topicId, :image
   has_many :sub_topics
 end
