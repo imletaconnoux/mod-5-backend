@@ -6,3 +6,4 @@ class Collection < ApplicationRecord
   has_many :followers, class_name: "User", through: :follows
 
 end
+ 
